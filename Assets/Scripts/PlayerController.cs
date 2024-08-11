@@ -1,18 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+namespace PlayerSpace
 {
-    // Start is called before the first frame update
-    void Start()
+    public class PlayerController : MonoBehaviour
     {
-        
-    }
+        public static PlayerController Instance { get; private set; }
+        private Vector3 _moveInput;
 
-    // Update is called once per frame
-    void Update()
-    {
+        public Vector2 MoveInput
+        {
+            set
+            {
+                _moveInput.x = value.x;
+                _moveInput.y = 0f;
+                _moveInput.z = value.y;
+                Debug.Log($"{_moveInput.x}, {_moveInput.y}, {_moveInput.z}");
+            }
+        }
+
+        private void Awake() => Instance = this;
+        
         
     }
 }
