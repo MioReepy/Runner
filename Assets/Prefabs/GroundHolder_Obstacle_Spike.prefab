@@ -1228,11 +1228,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 355fe128e492cea45801b06209d21a02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObstavlePrefab:
-  - {fileID: 3934921410292933461}
-  - {fileID: 0}
-  - {fileID: 0}
-  SpawnPoint: {fileID: 1141892750915476425}
   _timeDestroy: 5
 --- !u!1 &7204702277972130301
 GameObject:
