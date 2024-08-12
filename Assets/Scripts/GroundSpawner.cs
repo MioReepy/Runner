@@ -6,7 +6,7 @@ namespace GroundSpace
     {
         public static GroundSpawner Instance;
         
-        [SerializeField] private GameObject _groundTilePrefab;
+        [SerializeField] private GameObject[] _groundTilePrefab;
         [SerializeField] private int _tileVisiableInStart;
         
         private Vector3 _nextSpawnPoint;
@@ -23,7 +23,7 @@ namespace GroundSpace
 
         internal void SpawnTile()
         {
-            GameObject tempGround = Instantiate(_groundTilePrefab, _nextSpawnPoint, Quaternion.identity);
+            GameObject tempGround = Instantiate(_groundTilePrefab[Random.Range(0, _groundTilePrefab.Length - 1)], _nextSpawnPoint, Quaternion.identity);
             _nextSpawnPoint = tempGround.transform.GetChild(0).transform.position;
         }
     }
